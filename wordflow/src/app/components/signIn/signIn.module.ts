@@ -4,21 +4,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { FormModule } from '../form/form.module'; 
-import { SignUpComponent } from './signUp.component';
+import { SignInComponent } from './signIn.component';
+
 
 @NgModule({
   declarations: [
-    SignUpComponent
+    SignInComponent
   ],
   imports: [
     CommonModule, 
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
     RouterModule,
 
     FormModule
   ], 
-exports: [ SignUpComponent ]
+exports: [ SignInComponent ]
 })
-export class SignUpModule { 
+export class SignInModule { 
 
 }
