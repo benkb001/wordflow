@@ -4,8 +4,6 @@ import { get } from 'lodash';
 export default function passwordMatchValidator(group: AbstractControl): ValidationErrors | null {
     const password = get(group, 'controls.password.value');
     const confirm = get(group, 'controls.passwordConfirm.value'); 
-    console.log('ran validator'); 
     const works = password === confirm ? null : { passwordsDoNotMatch: true };
-    console.log(works); 
     return works; 
 }
