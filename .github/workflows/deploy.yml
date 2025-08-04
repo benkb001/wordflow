@@ -37,4 +37,4 @@ jobs:
       run: |
         IMAGE_URI=$ECR_REGISTRY/wordflow/frontend:$IMAGE_TAG
         docker build -t $IMAGE_URI ./wordflow
-        docker push $IMAGEU_URI
+        docker push $IMAGE_URI
