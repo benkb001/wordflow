@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.wordflow.wordflow_api.pgsql.schemas.User; 
 import com.wordflow.wordflow_api.pgsql.repositories.UserRepository; 
 
-class SignUpRequest {
+class SignInRequest {
     public String username; 
     public String password; 
 
@@ -18,16 +18,18 @@ class SignUpRequest {
 }
 
 @RestController
-public class SignUpController {
+public class SignInController {
 
     private final UserRepository userRepository; 
 
-    public SignUpController(UserRepository userRepository) {
+    public SignInController(UserRepository userRepository) {
         this.userRepository = userRepository; 
     }
 
-    @PostMapping("/sign-up")
-    public User home(@RequestBody SignUpRequest request) { 
-        return userRepository.insertUser(request.username, request.password); 
+    @PostMapping("/sign-in")
+    public User home(@RequestBody SignInRequest request) { 
+        System.out.println("hit the endpoint"); 
+        System.out.println(request); 
+        return userRepository.getUserByUsernamePassword(request.username, request.password); 
     }
 }

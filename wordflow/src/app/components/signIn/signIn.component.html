@@ -1,16 +1,1 @@
-<Form [formGroup]="form" (formSubmit)="handleSubmit()">
-    <input type="text" 
-        formControlName="username" 
-        class="form-control" 
-        placeholder="Username"
-        required>
-    <input type="password" 
-        formControlName="password" 
-        class="form-control" 
-        placeholder="Password"
-        required>
-    <div>
-        <button class="btn btn-primary me-3" type="submit">Sign-In</button>
-        <small class="text-muted">Don't have an Account Yet?<a a routerLink="/" class="ms-1">Sign Up</a></small>
-    </div>
-</Form>
+<auth [mode]="'sign-in'"></auth>

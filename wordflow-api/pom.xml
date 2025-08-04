@@ -85,7 +85,7 @@
 				<configuration>
 					<jsonLibrary>jackson2</jsonLibrary>
 					<outputKind>module</outputKind>
-					<outputFile>../wordflow/src/app/models.d.ts</outputFile>
+					<outputFile>../../wordflow-common/index.d.ts</outputFile>
 					<classes>
 						<class>com.wordflow.wordflow_api.pgsql.schemas.User</class>
 					</classes>

@@ -1,0 +1,42 @@
+<Form [formGroup]="form" (formSubmit)="handleSubmit()">
+  <input
+    type="text"
+    formControlName="username"
+    class="form-control"
+    placeholder="Username"
+    required
+  />
+  <input
+    type="password"
+    formControlName="password"
+    class="form-control"
+    placeholder="Password"
+    required
+  />
+
+  <input
+    *ngIf="isSignUp"
+    type="password"
+    formControlName="passwordConfirm"
+    class="form-control"
+    placeholder="Type password again"
+    required
+  />
+
+  <div>
+    <button class="btn btn-primary me-3" type="submit">
+      {{ isSignUp ? 'Sign-Up' : 'Sign-In' }}
+    </button>
+
+    <small class="text-muted">
+      {{ isSignUp ? 'Already have an account?' : "Don't have an account yet?" }}
+      <a
+        class="ms-1"
+        style="cursor: pointer;"
+        [routerLink]="isSignUp ? '/sign-in' : '/'">
+
+        {{ isSignUp ? 'Sign In' : 'Sign Up' }}
+      </a>
+    </small>
+  </div>
+</Form>

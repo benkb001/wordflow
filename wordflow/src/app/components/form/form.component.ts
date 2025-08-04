@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 @Component({
     selector: 'Form',
-    templateUrl: './form.component.html'
+    templateUrl: './form.component.html',
+    encapsulation: ViewEncapsulation.None
 })
 export class FormComponent { 
     @Input() formGroup!: FormGroup; 

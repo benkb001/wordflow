@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ClickableModule } from './components/clickable/clickable.module'; 
+import { FormModule } from './components/form/form.module';
 import { SignUpModule } from './components/signUp/signUp.module';
 import { SignInModule } from './components/signIn/signIn.module'; 
 import { AppRoutingModule } from './app-routing.module'; 
@@ -21,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 
     AppRoutingModule,
     ClickableModule,
+    FormModule,
     SignInModule,
     SignUpModule,
   ],
