@@ -26,7 +26,7 @@ public class SignUpController {
         this.userRepository = userRepository; 
     }
 
-    @PostMapping("/sign-up")
+    @PostMapping("/api/sign-up")
     public User home(@RequestBody SignUpRequest request) { 
         return userRepository.insertUser(request.username, request.password); 
     }
