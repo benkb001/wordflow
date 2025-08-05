@@ -1,3 +1,4 @@
+/*
 package com.wordflow.wordflow_api.pgsql.schemas;
 
 import javax.persistence.*;
@@ -22,3 +23,4 @@ public class Chapter {
         this.user = user;
     }
 }
+*/

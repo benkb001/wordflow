@@ -19,8 +19,8 @@ public class User {
     public String username;
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Chapter> chapters = new ArrayList<>();
+    //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    //private List<Chapter> chapters = new ArrayList<>();
 
     public User(UUID id, String username) {
         this.id = id; 
