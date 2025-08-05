@@ -18,6 +18,7 @@ class SignInRequest {
 }
 
 @RestController
+@RequestMapping("/api")
 public class SignInController {
 
     private final UserRepository userRepository; 
