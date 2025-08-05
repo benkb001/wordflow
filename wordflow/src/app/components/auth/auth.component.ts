@@ -41,7 +41,7 @@ export class AuthComponent {
     }
 
     handleSubmit() {
-        console.log('submit'); 
+        console.log('test changes'); 
         if (this.form.valid) {
             this.api.post<User>(this.mode, this.form.value).subscribe({
                 next: user => {
