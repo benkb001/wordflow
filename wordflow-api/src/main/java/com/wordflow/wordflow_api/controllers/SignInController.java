@@ -26,7 +26,7 @@ public class SignInController {
         this.userRepository = userRepository; 
     }
 
-    @PostMapping("/api/sign-in")
+    @PostMapping("/sign-in")
     public User home(@RequestBody SignInRequest request) { 
         System.out.println("hit the endpoint"); 
         System.out.println(request); 

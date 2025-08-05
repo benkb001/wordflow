@@ -19,6 +19,8 @@ public class User {
     public String username;
     private String password;
 
+    protected User() {
+    }
     //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     //private List<Chapter> chapters = new ArrayList<>();
 
