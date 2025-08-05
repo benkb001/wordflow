@@ -5,10 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import javax.persistence.*; 
 import java.util.UUID;
-import java.util.List; 
-import java.util.ArrayList; 
+// import java.util.List; 
+// import java.util.ArrayList; 
 
-import com.wordflow.wordflow_api.pgsql.schemas.Chapter; 
+// import com.wordflow.wordflow_api.pgsql.schemas.Chapter; 
 
 @Entity
 @Table(name = "users")
