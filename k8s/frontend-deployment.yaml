@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: REMOVED.dkr.ecr.us-east-1.amazonaws.com/wordflow/frontend:0.0.0.4
+        image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/wordflow/frontend:0.0.0.1
         ports:
         - containerPort: 80

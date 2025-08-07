@@ -22,6 +22,9 @@ spec:
         - name: POSTGRES_USER
           value: benjaminbradford
         - name: POSTGRES_PASSWORD
-          value: REMOVED
+          valueFrom:
+            secretKeyRef:
+              name: db-password-secret
+              key: DB_PASSWORD
         ports:
         - containerPort: 5432
