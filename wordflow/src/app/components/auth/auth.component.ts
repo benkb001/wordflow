@@ -41,7 +41,6 @@ export class AuthComponent {
     }
 
     handleSubmit() {
-        console.log('test changes'); 
         if (this.form.valid) {
             this.api.post<User>(this.mode, this.form.value).subscribe({
                 next: user => {
@@ -49,7 +48,7 @@ export class AuthComponent {
                     this.router.navigateByUrl('/home');
                 }, 
                 error: err => {
-                    toastr.error(err); 
+                    toastr.error(err.message);
                 }
             }); 
         } else {

@@ -24,9 +24,18 @@ public class UserRepository {
     };
 
     public User insertUser(String username, String password) {
-        String insertSql = "INSERT INTO users (id, password, username) VALUES (?, ?, ?)";
+        String insertSql = 
+            "INSERT INTO users (id, password, username) " +
+            "SELECT ?, ?, ? " + 
+            "WHERE NOT EXISTS (SELECT 1 FROM users WHERE username = ?)";
+        
         UUID id = UUID.randomUUID(); 
-        jdbcTemplate.update(insertSql, id, password, username);
+        int numInserted = jdbcTemplate.update(insertSql, id, password, username, username);
+
+        if (numInserted == 0) {
+            throw new IllegalArgumentException("A user with username " + username + "already exists!"); 
+        }
+
         return getUserById(id); 
     }
 
@@ -38,5 +47,10 @@ public class UserRepository {
     public User getUserByUsernamePassword(String username, String password) {
         String querySql = "SELECT * FROM users WHERE username = ? AND password = ?"; 
         return jdbcTemplate.queryForObject(querySql, userRowMapper, username, password);
+    }
+
+    public boolean userExists(UUID id) {
+        String querySql = "SELECT EXISTS (SELECT 1 FROM users WHERE id = ?)"; 
+        return jdbcTemplate.queryForObject(querySql, Boolean.class, id); 
     }
 }

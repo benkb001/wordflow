@@ -93,6 +93,7 @@
 					<outputFile>../../wordflow-common/index.d.ts</outputFile>
 					<classes>
 						<class>com.wordflow.wordflow_api.pgsql.schemas.User</class>
+						<class>com.wordflow.wordflow_api.pgsql.schemas.Book</class>
 					</classes>
 				</configuration>
 			</plugin>

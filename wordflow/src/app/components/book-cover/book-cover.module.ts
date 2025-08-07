@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClickableComponent } from './clickable.component';
+
+import { BookCoverComponent } from './book-cover.component';
+
 
 @NgModule({
   declarations: [
-    ClickableComponent
+    BookCoverComponent
   ],
   imports: [
     CommonModule
   ], 
-  exports: [ ClickableComponent ]
+exports: [ BookCoverComponent ]
 })
-export class ClickableModule { }
+export class BookCoverModule { 
+
+}

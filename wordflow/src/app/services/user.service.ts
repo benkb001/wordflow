@@ -5,7 +5,8 @@ import { User } from '@wrdflow/common';
     providedIn: 'root'
 })
 export class UserService {
-    private userSubject = new BehaviorSubject<User | null>(null); 
+    private readonly storageKey = 'loggedInUser'; 
+    private userSubject = new BehaviorSubject<User | null>(this.getStoredUser()); 
 
     user$: Observable<User | null> = this.userSubject.asObservable(); 
 
@@ -13,5 +14,11 @@ export class UserService {
 
     login(user: User) {
         this.userSubject.next(user); 
+        localStorage.setItem(this.storageKey, JSON.stringify(user)); 
+    }
+
+    getStoredUser() {
+        const data = localStorage.getItem(this.storageKey); 
+        return data ? JSON.parse(data) : null; 
     }
 }
