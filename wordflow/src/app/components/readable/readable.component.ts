@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Book, User } from '@wrdflow/common'; 
+import { Book, User } from '../../interfaces';
 
 import { ApiService } from 'src/app/services/api.service';
 

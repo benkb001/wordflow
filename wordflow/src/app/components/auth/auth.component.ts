@@ -9,7 +9,7 @@ import { UserService } from '../../services/user.service';
 
 import passwordMatchValidator from './auth.validators';
 
-import { User } from '@wrdflow/common'; 
+import { User } from '../../interfaces'; 
 
 @Component({
     selector: 'auth',

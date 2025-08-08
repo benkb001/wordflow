@@ -5,7 +5,7 @@ import * as toastr from 'toastr';
 
 import { ApiService } from '../../services/api.service';
 import { UserService } from '../../services/user.service'; 
-import { Book, User } from '@wrdflow/common'; 
+import { Book, User } from '../../interfaces';
 @Component({
     selector: 'writable',
     templateUrl: './writable.component.html'

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Book } from '@wrdflow/common'; 
+import { Book } from '../../interfaces';
 
 @Component({
     selector: 'book-cover',

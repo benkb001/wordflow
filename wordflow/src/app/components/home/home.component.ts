@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service'; 
-import { User } from '@wrdflow/common'; 
+import { User } from '../../interfaces';
 
 @Component({
     selector: 'home',
