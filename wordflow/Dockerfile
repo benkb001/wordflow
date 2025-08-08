@@ -3,7 +3,7 @@ FROM node:14-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
-
+RUN grep '@wrdflow/common' src/app/components/**/*.ts || echo "No bad imports"
 COPY . .
 RUN npm run build-production
 
