@@ -5,7 +5,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN grep '@wrdflow/common' src/app/components/**/*.ts || echo "No bad imports"
+
 RUN npm run build-production
 
 # Stage 2: Serve with Nginx
