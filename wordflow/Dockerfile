@@ -3,7 +3,6 @@ FROM node:14-alpine AS build
 WORKDIR /app
 COPY .npmrc .npmrc
 COPY package*.json ./
-RUN npm install @wrdflow/common
 RUN npm install
 
 COPY . .
