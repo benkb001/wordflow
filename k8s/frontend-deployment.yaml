@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/wordflow/frontend:0.0.0.1
+        image: ${IMAGE_URI}
         ports:
         - containerPort: 80

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/wordflow/backend:0.0.0.1
+        image: ${IMAGE_URI}
         ports:
         - containerPort: 8080
         env:

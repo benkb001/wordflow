@@ -36,13 +36,11 @@ jobs:
         IMAGE_URI=$ECR_REGISTRY/wordflow/backend:$IMAGE_TAG
         docker build -t $IMAGE_URI ./wordflow-api
         docker push $IMAGE_URI
-        kubectl apply -f k8s/backend-deployment.yaml
-        kubectl set image deployment/backend backend=$IMAGE_URI
+        env IMAGE_URI=$IMAGE_URI envsubst < k8s/backend-deployment.yaml | kubectl apply -f -
 
     - name: Build and push frontend image
       run: |
         IMAGE_URI=$ECR_REGISTRY/wordflow/frontend:$IMAGE_TAG
         docker build -t $IMAGE_URI ./wordflow
         docker push $IMAGE_URI
-        kubectl apply -f k8s/frontend-deployment.yaml
-        kubectl set image deployment/frontend frontend=$IMAGE_URI
+        env IMAGE_URI=$IMAGE_URI envsubst < k8s/frontend-deployment.yaml | kubectl apply -f -
